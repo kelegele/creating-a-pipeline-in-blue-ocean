@@ -9,17 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''export PATH=/usr/local/bin
-npm install'''
-      }
-    }
-
-    stage('Test') {
-      environment {
-        CI = 'true'
-      }
-      steps {
-        sh './jenkins/scripts/test.sh'
+        sh 'npm install'
       }
     }
 
